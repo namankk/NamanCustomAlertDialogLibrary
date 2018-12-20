@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NewLibraryForAlertDialog</string>
+    <string name="button">Button</string>
+    <string name="third_edit">third edit</string>
+    <string name="second_edit">second edit</string>
+    <string name="first_edit">first edit</string>
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="floating_btn_margin">16dp</dimen>
+    <dimen name="row_item_imageview_margin_bottom">20dp</dimen>
+    <dimen name="row_item_imageview_margin_top">20dp</dimen>
+    <dimen name="row_imageview_size">70dp</dimen>
+    <dimen name="row_imageview_margin">20dp</dimen>
+    <dimen name="browse_margin">5dp</dimen>
+    <dimen name="textview_add_player_right_margin">5dp</dimen>
+    <dimen name="browse_btn_width">120dp</dimen>
+    <dimen name="browse_btn_height">40dp</dimen>
+    <dimen name="add_player_text_margin_top">10dp</dimen>
+
+
+    <dimen name="font_size_small">12sp</dimen>
+    <dimen name="font_size_medium">20sp</dimen>
+    <dimen name="edittext_right_padding">10dp</dimen>
+    <dimen name="txt_margin_end">5dp</dimen>
+    <dimen name="spinner_scoreboard">3dp</dimen>
+    <dimen name="padding_5dp">5dp</dimen>
+    <dimen name="txt_2">2dp</dimen>
+    <dimen name="circular_image_50">50dp</dimen>
+    <dimen name="margin_5">5dp</dimen>
+    <dimen name="margin_2">2dp</dimen>
+    <dimen name="padding_20">20dp</dimen>
+    <dimen name="padding_15">15dp</dimen>
+    <dimen name="btn_txt_size_11sp">11sp</dimen>
+    <dimen name="btn_txt_size_13sp">13sp</dimen>
+
+
+
+    <dimen name="top_logo_height">80dp</dimen>
+
+    <dimen name="logo_top_margin">10dp</dimen>
+    <dimen name="logo_bottom_margin">10dp</dimen>
+    <dimen name="logo_left_margin">30dp</dimen>
+    <dimen name="logo_right_margin">30dp</dimen>
+
+    <dimen name="btn_height">35dp</dimen>
+    <dimen name="btn_bottom_margin">10dp</dimen>
+    <dimen name="btn_top_margin">10dp</dimen>
+    <dimen name="btn_left_margin">20dp</dimen>
+    <dimen name="btn_right_margin">20dp</dimen>
+
+    <dimen name="dialog_btn_height">35dp</dimen>
+    <dimen name="dialog_btn_margin_top">10dp</dimen>
+    <dimen name="dialog_edittext_height">40dp</dimen>
+    <dimen name="dialog_title_text_size">20sp</dimen>
+
+    <dimen name="edittext_bottom_margin">20dp</dimen>
+    <dimen name="edittext_left_margin">20dp</dimen>
+    <dimen name="edittext_right_margin">20dp</dimen>
+    <dimen name="edittext_top_margin">10dp</dimen>
+
+    <dimen name="txt_size_10sp">10sp</dimen>
+    <dimen name="btn_size_15sp">15sp</dimen>
+    <dimen name="btn_txt_size_18sp">18sp</dimen>
+    <dimen name="txtv_text_size_15sp">15sp</dimen>
+    <dimen name="txtv_txt_size_11sp">11sp</dimen>
+    <dimen name="txtv_txt_size_16sp">16sp</dimen>
+    <dimen name="txtv_txt_size_14sp">14sp</dimen>
+    <dimen name="txtv_txt_size_40sp">40sp</dimen>
+    <dimen name="txtv_txt_size_18sp">40sp</dimen>
+
+    <dimen name="pdlg_space_1.0x">9.6dp</dimen>
+    <dimen name="pdlg_corner_radius">5.6dp</dimen>
+    <dimen name="pdlg_icon_size">38.6dp</dimen>
+    <dimen name="pdlg_border_size">3.2dp</dimen>
+
+</resources>
