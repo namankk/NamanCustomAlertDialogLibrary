@@ -1,4 +1,20 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+
+    def groupProjectID = 'com.rultech.naman.namandialoglibrary'
+    def artifactProjectID = 'optimize'
+    def publishVersionID = '0.1.0'
+
+    userOrg = 'murthyanitaa'
+    repoName = 'Optimize'
+    groupId = groupProjectID
+    artifactId = artifactProjectID
+    publishVersion = publishVersionID
+    desc = 'This library provide a custom dialog in which you can Set title, message edittext and any number of buttons .'
+    website = 'https://github.com/namankk/NamanCustomAlertDialogLibrary'
+}
 
 android {
     compileSdkVersion 28
