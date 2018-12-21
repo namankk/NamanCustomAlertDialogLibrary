@@ -269,7 +269,7 @@ NamanCustomDialog namanCustomDialog = new NamanCustomDialog(MainActivity.this);
  | setEditText(int numberOfEdittext, String hint1, String hint2, String hint3)    |sets the number of edittext you want max 3, hint of first edittext,hint of second edittext, hint of third edit text, if you need only 1 edittext then pass null in hint2 and hint3|no default value you have to set it |
  | setEditTextInputType(int idOfEdittext, int inputType)     | sets the input type of a particular edittext ids of edit text is 1,2,3  | defalut is text |
  | addButton(String buttonText, Integer buttonTextColor, Integer buttonBackGroundColor, NamanCustomDialogCallback callback)|adds button with text,text color,background color and callback|
- | addButtonWithEditetext(String buttonText, Integer buttonTextColor, Integer buttonBackGroundColor, final NamanCustomDialogWithDataCallback customDialogWithDataCallback) | adds button with text,text color,background color and callback|   |
+ | addButtonWithEditetext(String buttonText, Integer buttonTextColor, Integer buttonBackGroundColor, final NamanCustomDialogWithDataCallback customDialogWithDataCallback) | adds button with text,text color,background color and customDialogWithDataCallback|   |
  | setAnimationEnabled(boolean)       | enables or disables dialog animation| Disables                     |
 
 
