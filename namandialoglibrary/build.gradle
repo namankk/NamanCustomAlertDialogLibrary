@@ -4,11 +4,11 @@ apply plugin: 'com.novoda.bintray-release'
 publish {
 
     def groupProjectID = 'com.rultech.naman.namandialoglibrary'
-    def artifactProjectID = 'optimize'
+    def artifactProjectID = 'NamanCustomAlertDialogLibrary'
     def publishVersionID = '0.1.0'
 
-    userOrg = 'murthyanitaa'
-    repoName = 'Optimize'
+    userOrg = 'namankashyap'
+    repoName = 'NamanCustomAlertDialogLibrary'
     groupId = groupProjectID
     artifactId = artifactProjectID
     publishVersion = publishVersionID
