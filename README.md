@@ -66,11 +66,12 @@ NamanCustomDialog namanCustomDialog = new NamanCustomDialog(MainActivity.this);
 ![alt text](https://github.com/namankk/NamanCustomAlertDialogLibrary/blob/master/Screenshot/4.png "Customize icon")
 
 ### Add Buttons:
+**Note:** There are two types of button available one which gets the edittext value and other gives only button click event :
 - You can add unlimited customized buttons to dialog:there are two types of button one which gets the edittext value and other gives only button click event 
 
-```
-// Button with edittext string value.
 
+// Button with Edit text string value.
+```
  .addButtonWithEditetext("Submit", R.color.pdlg_color_black, R.color.pdlg_color_gray, new NamanCustomDialogWithDataCallback() {
                     @Override
                     public void onClickWithData(String firstEditTextValue, String secondEditTextValue, String thirdEditTextValue) {
@@ -78,7 +79,9 @@ NamanCustomDialog namanCustomDialog = new NamanCustomDialog(MainActivity.this);
                     }
                 })
                 
+  ```
   //Simple click event button
+ ```
                 .addButton("Cancel", R.color.pdlg_color_black, R.color.pdlg_color_gray, new NamanCustomDialogCallback() {
                     @Override
                     public void onClick() {
@@ -90,9 +93,24 @@ NamanCustomDialog namanCustomDialog = new NamanCustomDialog(MainActivity.this);
 
 
 
-### Add Edit Text max 3:
-**Note:** You can add maximum 3 edit text in your dialog just pass the number 3 in setEditText methode along with the hints of edit text you need for example:
+### Set Edit Text max 3:
+**Note:** You can add maximum 3 edit text in your dialog just pass the number 3 in setEditText method along with the hints of edit text you need for example:
+**Note:** To get the values of edit text use addButtonWithEditetext() method it will give you the string typed in edit text
+- This will create 3 edit text with the hints given below
+```
+ .setEditText(3, "Current Password", "New Password", "Confirm Password")
+ ```
+ - This will create two edit fields with the given hints
+ ```
+  .setEditText(2, "Current Password", "New Password", "null")
+```
+- This will give you a single edit text with the hint
+```
+.setEditText(1, "Current Password", "null", "null")
+```
+ ### Set Edit Text InputType :
 **Note:** You can also set the InputType of every edit text for example:
+.setEditTextInputType(idIfEditText, InputType.TYPE_CLASS_TEXT)
 
 - This will set the first edittext input type as text
 ```
