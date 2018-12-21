@@ -36,7 +36,7 @@ NamanCustomDialog namanCustomDialog = new NamanCustomDialog(MainActivity.this);
 
 ##### Output:
 
-![alt text](https://github.com/mjn1369/PrettyDialog/blob/master/Screenshots/1.png "Simple Dialog, No Customization")
+![alt text](https://github.com/namankk/NamanCustomAlertDialogLibrary/blob/master/Screenshot/1.png "Simple Dialog, No Customization")
 
 ### Change Icon:
 - You can set the dialog icon resource:
@@ -63,7 +63,7 @@ NamanCustomDialog namanCustomDialog = new NamanCustomDialog(MainActivity.this);
 
 ##### Output:
 
-![alt text](https://github.com/mjn1369/PrettyDialog/blob/master/Screenshots/2.png "Customize icon")
+![alt text](https://github.com/namankk/NamanCustomAlertDialogLibrary/blob/master/Screenshot/4.png "Customize icon")
 
 ### Add Buttons:
 - You can add unlimited customized buttons to dialog:there are two types of button one which gets the edittext value and other gives only button click event 
@@ -88,9 +88,7 @@ NamanCustomDialog namanCustomDialog = new NamanCustomDialog(MainActivity.this);
                 })
 ```
 
-##### Output:
 
-![alt text](https://github.com/mjn1369/PrettyDialog/blob/master/Screenshots/3.png "Added custom buttons")
 
 ### Add Edit Text max 3:
 **Note:** You can add maximum 3 edit text in your dialog just pass the number 3 in setEditText methode along with the hints of edit text you need for example:
@@ -141,7 +139,9 @@ NamanCustomDialog namanCustomDialog = new NamanCustomDialog(MainActivity.this);
 ```
 
 
+##### Output:
 
+![alt text](https://github.com/namankk/NamanCustomAlertDialogLibrary/blob/master/Screenshot/3.png "Added custom buttons")
 
 
 **Note:** To Dismiss NamanCustomDialog on a button click, you have to instantiate NamanCustomDialog and keep the variable, then call hide() on the variable inside button's onClickListener method:
@@ -160,10 +160,35 @@ NamanCustomDialog namanCustomDialog = new NamanCustomDialog(MainActivity.this);
                 namanCustomDialog.setAnimationEnabled(true);
                 namanCustomDialog.show();
 ```
+### Simple Dialog with edittext and Buttons:
+
+```
+NamanCustomDialog namanCustomDialog = new NamanCustomDialog(MainActivity.this);
+                namanCustomDialog.setTitle("Forgot Password ?").setIcon(null, null, R.color.pdlg_color_green);
+                namanCustomDialog.setEditText(1, "Enter your email", null, null);
+                namanCustomDialog.addButtonWithEditetext("Submit", null, R.color.pdlg_color_green, new NamanCustomDialogWithDataCallback() {
+                    @Override
+                    public void onClickWithData(String firstEditTextValue, String secondEditTextValue, String thirdEditTextValue) {
+                        Toast.makeText(MainActivity.this, firstEditTextValue, Toast.LENGTH_SHORT).show();
+                    }
+                });
+                namanCustomDialog.addButton("Cancel", null, R.color.pdlg_color_green, new NamanCustomDialogCallback() {
+                    @Override
+                    public void onClick() {
+                        Toast.makeText(MainActivity.this, "close the dialog", Toast.LENGTH_SHORT).show();
+                        namanCustomDialog.hide();
+                    }
+                });
+                namanCustomDialog.setAnimationEnabled(true);
+                namanCustomDialog.show();
+
+```
+
+##### Output:
+
+![alt text](https://github.com/namankk/NamanCustomAlertDialogLibrary/blob/master/Screenshot/2.png "Simple Dialog with,Edittext and two button")
 
 ### Custom Title, Message,Buttons:
-
-**Note:** Typeface applies to all texts inside the dialog.
 
 ```
  namanCustomDialog = new NamanCustomDialog(MainActivity.this);
@@ -198,7 +223,7 @@ NamanCustomDialog namanCustomDialog = new NamanCustomDialog(MainActivity.this);
 
 ##### Output:
 
-![alt text](https://github.com/mjn1369/PrettyDialog/blob/master/Screenshots/4.png "Custom Title, Message and Typeface")
+![alt text](https://github.com/namankk/NamanCustomAlertDialogLibrary/blob/master/Screenshot/4.png "Custom Title, Message and Typeface")
 
 - Enable/Disable dialog animation:
 
