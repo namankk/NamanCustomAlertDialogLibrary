@@ -8,6 +8,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,14 +25,15 @@ public class NamanCustomDialogButton extends LinearLayout {
     LinearLayout ll_button;
     ImageView iv;
     Typeface tf;
-    Integer buttonTextColor,buttonBackGroundColor;
+    Integer buttonTextColor,buttonBackGroundColor,buttonTextSize,buttonHeight;
     NamanCustomDialogWithDataCallback dataCallback;
     String firstEditTextValue,secondEditTextValue,thirdEditTextValue;
 
     public NamanCustomDialogButton(Context context,
-                                   String buttonText,Integer buttonTextColor,Integer buttonBackGroundColor,
+                                   String buttonText,
+                                   Integer buttonTextColor,
+                                   Integer buttonBackGroundColor,
                                    Typeface tf,
-            /*PrettyDialog.BUTTON_TYPE type,*/
                                    NamanCustomDialogCallback callback) {
         super(context);
         this.context = context;
@@ -47,7 +49,9 @@ public class NamanCustomDialogButton extends LinearLayout {
         init();
     }
     public NamanCustomDialogButton(Context context,
-                                   String buttonText,Integer buttonTextColor,Integer buttonBackGroundColor,
+                                   String buttonText,
+                                   Integer buttonTextColor,
+                                   Integer buttonBackGroundColor,
                                    Typeface tf,
                                    NamanCustomDialogWithDataCallback customDialogWithDataCallback) {
         super(context);
@@ -72,8 +76,20 @@ public class NamanCustomDialogButton extends LinearLayout {
         }
         tv = (TextView) findViewById(R.id.tv_button);
         ll_button=(LinearLayout)findViewById(R.id.ll_button);
+
 //        ll_button.setBackgroundColor(context.getColor(buttonBackGroundColor==null?default_background_color:buttonBackGroundColor));
+     /*   if (buttonHeight!=null){
+            int margin = resources.getDimensionPixelSize(R.dimen.pdlg_space_1_0x);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,80);
+            lp.setMargins(margin, margin, margin, 0);
+            ll_button.setLayoutParams(lp);
+        }*/
+
+        /*ll_button.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 80));*/
         tv.setText(text);
+       /* if (buttonTextSize!=null){
+            tv.setTextSize(buttonTextSize);
+        }*/
         tv.setTextColor(context.getColor(buttonTextColor==null?default_text_color:buttonTextColor));
         setBackground();
         if(tf != null)
@@ -103,6 +119,15 @@ public class NamanCustomDialogButton extends LinearLayout {
 //        ll_button.setBackgroundColor(context.getColor(buttonBackGroundColor==null?default_background_color:buttonBackGroundColor));
         tv.setText(text);
         tv.setTextColor(context.getColor(buttonTextColor==null?default_text_color:buttonTextColor));
+     /*   if (buttonTextSize!=null){
+            tv.setTextSize(buttonTextSize);
+        }
+        if (buttonHeight!=null){
+            int margin = resources.getDimensionPixelSize(R.dimen.pdlg_space_1_0x);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,80);
+            lp.setMargins(margin, margin, margin, 0);
+            ll_button.setLayoutParams(lp);
+        }*/
         setBackground();
         if(tf != null)
             tv.setTypeface(tf);
@@ -124,6 +149,19 @@ public class NamanCustomDialogButton extends LinearLayout {
     public void setTypeface(Typeface tf){
         this.tf = tf;
         tv.setTypeface(tf);
+    }
+
+    public void setButtonHeight(Integer Height){
+        this.buttonHeight = Height;
+        int margin = resources.getDimensionPixelSize(R.dimen.pdlg_space_1_0x);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,buttonHeight);
+        lp.setMargins(margin, margin, margin, 0);
+        ll_button.setLayoutParams(lp);
+    }
+
+    public void setButtonTextSize(Integer TextSize){
+        this.buttonTextSize = TextSize;
+        tv.setTextSize(buttonTextSize);
     }
     private void setBackground() {
         ll_button.setBackground(makeSelector(context.getColor(buttonBackGroundColor==null?default_background_color:buttonBackGroundColor)));

@@ -36,7 +36,7 @@
     <dimen name="logo_left_margin">30dp</dimen>
     <dimen name="logo_right_margin">30dp</dimen>
 
-    <dimen name="btn_height">35dp</dimen>
+    <dimen name="naman_cd_btn_height">35dp</dimen>
     <dimen name="btn_bottom_margin">10dp</dimen>
     <dimen name="btn_top_margin">10dp</dimen>
     <dimen name="btn_left_margin">20dp</dimen>
@@ -66,5 +66,8 @@
     <dimen name="pdlg_corner_radius">5.6dp</dimen>
     <dimen name="pdlg_icon_size">38.6dp</dimen>
     <dimen name="pdlg_border_size">3.2dp</dimen>
+
+
+
 
 </resources>

@@ -92,8 +92,8 @@ public class NamanCustomDialog extends AppCompatDialog {
     }
 
     /************************************* Add Button to Dialog ***********************************/
-    public NamanCustomDialog addButton(String buttonText, Integer buttonTextColor, Integer buttonBackGroundColor,  /*BUTTON_TYPE type,*/ NamanCustomDialogCallback callback) {
-        NamanCustomDialogButton button = new NamanCustomDialogButton(context, buttonText, buttonTextColor, buttonBackGroundColor, typeface, /*type,*/ callback);
+    public NamanCustomDialog addButton(String buttonText, Integer buttonTextColor, Integer buttonBackGroundColor, NamanCustomDialogCallback callback) {
+        NamanCustomDialogButton button = new NamanCustomDialogButton(context, buttonText, buttonTextColor, buttonBackGroundColor, typeface,callback);
         int margin = resources.getDimensionPixelSize(R.dimen.pdlg_space_1_0x);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp.setMargins(margin, margin, margin, 0);
@@ -102,7 +102,7 @@ public class NamanCustomDialog extends AppCompatDialog {
         return this;
     }
 
-    public NamanCustomDialog addButtonWithEditetext(String buttonText, Integer buttonTextColor, Integer buttonBackGroundColor, /*BUTTON_TYPE type,*/ final NamanCustomDialogWithDataCallback customDialogWithDataCallback) {
+    public NamanCustomDialog addButtonWithEditetext(String buttonText, Integer buttonTextColor, Integer buttonBackGroundColor,  final NamanCustomDialogWithDataCallback customDialogWithDataCallback) {
         NamanCustomDialogButton button = new NamanCustomDialogButton(context, buttonText, buttonTextColor, buttonBackGroundColor, typeface, new NamanCustomDialogWithDataCallback() {
             @Override
             public void onClickWithData(String firstEditTextValue, String secondEditTextValue, String thirdEditTextValue) {
@@ -171,10 +171,33 @@ public class NamanCustomDialog extends AppCompatDialog {
         typeface = tf;
         tv_title.setTypeface(tf);
         tv_message.setTypeface(tf);
+        et_first.setTypeface(tf);
+        et_second.setTypeface(tf);
+        et_third.setTypeface(tf);
 
         for (int i = 0; i < ll_buttons.getChildCount(); i++) {
             NamanCustomDialogButton button = (NamanCustomDialogButton) ll_buttons.getChildAt(i);
             button.setTypeface(tf);
+            button.requestLayout();
+        }
+
+        return this;
+    }
+    public NamanCustomDialog setButtonsHeight(Integer buttonHeight) {
+
+        for (int i = 0; i < ll_buttons.getChildCount(); i++) {
+            NamanCustomDialogButton button = (NamanCustomDialogButton) ll_buttons.getChildAt(i);
+           button.setButtonHeight(buttonHeight);
+            button.requestLayout();
+        }
+
+        return this;
+    }
+    public NamanCustomDialog setButtonsTextSize(Integer buttonsTextSize) {
+
+        for (int i = 0; i < ll_buttons.getChildCount(); i++) {
+            NamanCustomDialogButton button = (NamanCustomDialogButton) ll_buttons.getChildAt(i);
+            button.setButtonTextSize(buttonsTextSize);
             button.requestLayout();
         }
 
