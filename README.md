@@ -10,7 +10,7 @@ Add this to your app build.gradle:
 
 ```
 dependencies {
-implementation 'com.rultech.naman.namandialoglibrary:NamanCustomAlertDialogLibrary:0.1.0'
+implementation 'com.rultech.naman.namandialoglibrary:NamanCustomAlertDialogLibrary:0.1.1'
 }
 ```
 ## Usage
@@ -243,16 +243,86 @@ NamanCustomDialog namanCustomDialog = new NamanCustomDialog(MainActivity.this);
 
 ![alt text](https://github.com/namankk/NamanCustomAlertDialogLibrary/blob/master/Screenshot/4.png "Custom Title, Message and Typeface")
 
+### Change button Height and Text size:
+- Change Button Height
+```
+ .setButtonsHeight(80)
+```
+- Change Button Text Size
+```
+.setButtonsTextSize(30)
+```
+
+```
+NamanCustomDialog namanCustomDialog=new NamanCustomDialog(this);
+                namanCustomDialog.setIcon(null,null,null)
+                        .setTitle("Button size change")
+                        .setMessage("change button height and button text size")
+                        .addButton("Submit", null, null, new NamanCustomDialogCallback() {
+                            @Override
+                            public void onClick() {
+                                Toast.makeText(MainActivity.this, "Submit", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addButton("Submit", null, null, new NamanCustomDialogCallback() {
+                            @Override
+                            public void onClick() {
+                                Toast.makeText(MainActivity.this, "Submit", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setButtonsHeight(80)
+                        .setButtonsTextSize(30)
+                        .show();
+
+```
+
+##### Output:
+
+![alt text](https://github.com/namankk/NamanCustomAlertDialogLibrary/blob/master/Screenshot/5.png "Change button height and text size")
+
+### Change font style of whole dialog:
+- Change Type face
+```
+.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC))
+
+```
+```
+  namanCustomDialog=new NamanCustomDialog(this);
+                namanCustomDialog.setIcon(null,null,null)
+                        .setTitle("Change font of dialog")
+                        .setMessage("change front style of the dialog")
+                       .setEditText(1,"demo",null,null)
+                        .addButtonWithEditetext("Submit", null, null, new NamanCustomDialogWithDataCallback() {
+                            @Override
+                            public void onClickWithData(String firstEditTextValue, String secondEditTextValue, String thirdEditTextValue) {
+                                Toast.makeText(MainActivity.this, firstEditTextValue, Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addButton("Cancel", null, null, new NamanCustomDialogCallback() {
+                            @Override
+                            public void onClick() {
+                                Toast.makeText(MainActivity.this, "Submit", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                    .setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC))
+                        .show();
+```
+
+##### Output:
+
+![alt text](https://github.com/namankk/NamanCustomAlertDialogLibrary/blob/master/Screenshot/6.png "Change typeface")
+
+
 - Enable/Disable dialog animation:
 
 ```
 .setAnimationEnabled(true)
 ```
 
-- Set dialog gravity:
+- Set Typeface:
 
 ```
-.setGravity(Gravity.BOTTOM)
+.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC))
 ```
 
 ## Functions
@@ -271,7 +341,11 @@ NamanCustomDialog namanCustomDialog = new NamanCustomDialog(MainActivity.this);
  | addButton(String buttonText, Integer buttonTextColor, Integer buttonBackGroundColor, NamanCustomDialogCallback callback)|adds button with text,text color,background color and callback|
  | addButtonWithEditetext(String buttonText, Integer buttonTextColor, Integer buttonBackGroundColor, final NamanCustomDialogWithDataCallback customDialogWithDataCallback) | adds button with text,text color,background color and customDialogWithDataCallback|   |
  | setAnimationEnabled(boolean)       | enables or disables dialog animation| Disables                     |
+|setButtonsHeight(Interger buttonHeight)      |set the all buttons height |
+|setButtonsTextSize(Interger butonTextSize) | set the all buttons text size |
+|setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC))  | set the font style of whole dialog |
 
+                       
 
 
 ## License
@@ -279,16 +353,17 @@ NamanCustomDialog namanCustomDialog = new NamanCustomDialog(MainActivity.this);
  ```
 Copyright 2018 Naman Kashyap
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-    http://www.apache.org/licenses/LICENSE-2.0
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
  
 ```  
