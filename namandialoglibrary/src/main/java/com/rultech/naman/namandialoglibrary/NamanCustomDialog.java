@@ -65,6 +65,7 @@ public class NamanCustomDialog extends AppCompatDialog {
         imgIcon = (ImageView) findViewById(R.id.imgIcon);
         Drawable drawable = context.getDrawable(R.drawable.dialogbox_oval_shape);
         drawable.setTint(context.getColor(R.color.colorPrimaryDark));
+        imgIcon.setBackground(drawable);
 
         close_rotation_animation = new RotateAnimation(0, 180,
                 Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,

@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (viewId) {
             case R.id.buttonSimple: {
                 namanCustomDialog = new NamanCustomDialog(MainActivity.this);
-                namanCustomDialog.setTitle("Request Send").setIcon(null, null, null);
+                namanCustomDialog.setTitle("Request Send")/*.setIcon(null, null, null)*/;
                 namanCustomDialog.setMessage("Changes will appear after some time");
                 namanCustomDialog.addButton("OK", null, null, new NamanCustomDialogCallback() {
                     @Override
