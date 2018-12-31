@@ -350,8 +350,10 @@ NamanCustomDialog namanCustomDialog=new NamanCustomDialog(this);
 
 ## Credits
  
- ```
+ 
  * [PrettyDialog](https://github.com/mjn1369/PrettyDialog)
+ 
+ ```
 Modified Version of https://github.com/mjn1369/PrettyDialog All credits goes to https://github.com/mjn1369/PrettyDialog
 
 ```  
