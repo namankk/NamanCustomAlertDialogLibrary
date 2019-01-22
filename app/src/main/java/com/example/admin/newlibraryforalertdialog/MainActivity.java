@@ -14,7 +14,7 @@ import com.rultech.naman.namandialoglibrary.NamanCustomDialogCallback;
 import com.rultech.naman.namandialoglibrary.NamanCustomDialogWithDataCallback;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button buttonSimple, buttonWithSingleEditText, buttonWithThreeEditText, buttonCustomSetting,buttonSizeChange,buttonTextStyleChange;
+    Button buttonSimple, buttonWithSingleEditText, buttonWithThreeEditText, buttonCustomSetting, buttonSizeChange, buttonTextStyleChange;
     NamanCustomDialog namanCustomDialog;
 
     @Override
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (viewId) {
             case R.id.buttonSimple: {
                 namanCustomDialog = new NamanCustomDialog(MainActivity.this);
-                namanCustomDialog.setTitle("Request Send")/*.setIcon(null, null, null)*/;
+                namanCustomDialog.setTitle("Request Send").setIcon(null, null, null);
                 namanCustomDialog.setMessage("Changes will appear after some time");
                 namanCustomDialog.addButton("OK", null, null, new NamanCustomDialogCallback() {
                     @Override
@@ -126,6 +126,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         namanCustomDialog.hide();
                     }
                 });
+                /*namanCustomDialog.setButtonsBackgroundImage(R.drawable.button_rectangle);*/
+
                 namanCustomDialog.setAnimationEnabled(false);
                 namanCustomDialog.show();
                 break;
@@ -147,17 +149,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 Toast.makeText(MainActivity.this, "Submit", Toast.LENGTH_SHORT).show();
                             }
                         })
-                        .setButtonsHeight(80)
-                        .setButtonsTextSize(30)
+                        .setButtonsHeight(50)
                         .show();
                 break;
             }
-            case R.id.buttonTextStyleChange:{
-                namanCustomDialog=new NamanCustomDialog(this);
-                namanCustomDialog.setIcon(null,null,null)
+            case R.id.buttonTextStyleChange: {
+                namanCustomDialog = new NamanCustomDialog(this);
+                namanCustomDialog.setIcon(null, null, null)
                         .setTitle("Change font of dialog")
                         .setMessage("change front style of the dialog")
-                       .setEditText(1,"demo",null,null)
+                        .setEditText(1, "demo", null, null)
                         .addButtonWithEditetext("Submit", null, null, new NamanCustomDialogWithDataCallback() {
                             @Override
                             public void onClickWithData(String firstEditTextValue, String secondEditTextValue, String thirdEditTextValue) {
@@ -170,7 +171,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 Toast.makeText(MainActivity.this, "Submit", Toast.LENGTH_SHORT).show();
                             }
                         })
-                    .setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC))
+                        .addButton("Cancel", null, null, new NamanCustomDialogCallback() {
+                            @Override
+                            public void onClick() {
+                                Toast.makeText(MainActivity.this, "Submit", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC))
+                        .setButtonsBackgroundImage(R.drawable.button_background)
+                        .setButtonsHeight(40)
                         .show();
                 break;
             }

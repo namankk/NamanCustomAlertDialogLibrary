@@ -11,6 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatDialog;
 import android.text.InputType;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,20 +20,24 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.RotateAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class NamanCustomDialog extends AppCompatDialog {
     NamanCustomDialog thisDialog;
     Resources resources;
     LinearLayout ll_buttons;
+    RelativeLayout llRoot;
     TextView tv_message, tv_title;
     Typeface typeface;
     Context context;
     EditText et_first, et_second, et_third;
     ImageView imgIcon;
     RotateAnimation close_rotation_animation;
+    int widthOfDialog;
 
     public NamanCustomDialog(Context context) {
         super(context);
@@ -50,6 +55,15 @@ public class NamanCustomDialog extends AppCompatDialog {
     private void setupViews_Base() {
 
         ll_buttons = (LinearLayout) findViewById(R.id.ll_buttons);
+        llRoot = (RelativeLayout) findViewById(R.id.linear_main_view);
+     /*   LinearLayout.LayoutParams layoutParams=new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        layoutParams.setMarginStart(20);
+        layoutParams.setMarginEnd(20);
+        llRoot.setLayoutParams(layoutParams);*/
+       /* FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp.setMargins(20, 0, 20, 0);
+        llRoot.setLayoutParams(lp);*/
+
         tv_title = (TextView) findViewById(R.id.tv_title);
         tv_title.setVisibility(View.GONE);
         tv_message = (TextView) findViewById(R.id.tv_message);
@@ -76,7 +90,6 @@ public class NamanCustomDialog extends AppCompatDialog {
         close_rotation_animation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-
             }
 
             @Override
@@ -188,7 +201,9 @@ public class NamanCustomDialog extends AppCompatDialog {
 
         for (int i = 0; i < ll_buttons.getChildCount(); i++) {
             NamanCustomDialogButton button = (NamanCustomDialogButton) ll_buttons.getChildAt(i);
-           button.setButtonHeight(buttonHeight);
+            final float scale = getContext().getResources().getDisplayMetrics().density;
+            int pixels = (int) (buttonHeight * scale + 0.5f);
+           button.setButtonHeight(pixels);
             button.requestLayout();
         }
 
@@ -202,6 +217,19 @@ public class NamanCustomDialog extends AppCompatDialog {
             button.requestLayout();
         }
 
+        return this;
+    }
+    public NamanCustomDialog setButtonsBackgroundImage(int drawableID) {
+
+        for (int i = 0; i < ll_buttons.getChildCount(); i++) {
+            NamanCustomDialogButton button = (NamanCustomDialogButton) ll_buttons.getChildAt(i);
+            /*button.setBackground(drawableID);*/
+            button.setButtonBackGroundImage(drawableID);
+            button.requestLayout();
+        }
+    /*   FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp.setMargins(40, 0, 40, 0);
+        llRoot.setLayoutParams(lp);*/
         return this;
     }
 

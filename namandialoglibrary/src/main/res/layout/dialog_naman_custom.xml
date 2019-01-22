@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/linear_main_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,6 +9,7 @@
 
 
     <RelativeLayout
+        android:id="@+id/rel_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -47,6 +48,7 @@
         android:layout_marginStart="19dp"
         android:layout_marginEnd="19dp"
         android:paddingStart="8dp"
+        android:layout_below="@id/rel_title"
         android:paddingEnd="8dp"
         android:text="@string/app_name"
         android:textSize="15sp"
@@ -61,12 +63,14 @@
         android:layout_marginStart="19dp"
         android:layout_marginEnd="19dp"
         android:paddingStart="8dp"
+        android:layout_below="@id/tv_message"
         android:paddingEnd="8dp"
         android:layout_marginTop="@dimen/edittext_top_margin"
         android:inputType="text"
         android:background="@drawable/edittext_rectangle"
         android:maxLines="1"
         android:hint="@string/first_edit" />
+
     <EditText
         android:id="@+id/et_second"
         android:layout_width="match_parent"
@@ -75,11 +79,13 @@
         android:layout_marginBottom="10dp"
         android:layout_marginStart="19dp"
         android:layout_marginEnd="19dp"
+        android:layout_below="@id/et_first"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
         android:inputType="text"
         android:background="@drawable/edittext_rectangle"
         android:hint="@string/second_edit" />
+
     <EditText
         android:id="@+id/et_third"
         android:layout_width="match_parent"
@@ -87,6 +93,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_marginStart="19dp"
+        android:layout_below="@id/et_second"
         android:layout_marginEnd="19dp"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
@@ -97,9 +104,10 @@
     <LinearLayout
         android:id="@+id/ll_buttons"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_third"
         android:layout_marginBottom="15dp"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical"/>
 
 
    <!-- <Button
@@ -131,4 +139,4 @@
         android:layout_marginRight="@dimen/btn_right_margin" />-->
 
 
-</LinearLayout>
+</RelativeLayout>
