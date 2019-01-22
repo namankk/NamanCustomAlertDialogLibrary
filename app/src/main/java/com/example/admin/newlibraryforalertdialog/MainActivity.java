@@ -73,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 });
                 namanCustomDialog.setAnimationEnabled(true);
+                namanCustomDialog.setButtonsBackgroundImage(R.drawable.button_background)
+                        .setButtonsHeight(40);
                 namanCustomDialog.show();
                 break;
             }
@@ -149,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 Toast.makeText(MainActivity.this, "Submit", Toast.LENGTH_SHORT).show();
                             }
                         })
-                        .setButtonsHeight(50)
+                        .setButtonsHeight(40)
                         .show();
                 break;
             }
@@ -159,7 +161,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .setTitle("Change font of dialog")
                         .setMessage("change front style of the dialog")
                         .setEditText(1, "demo", null, null)
-                        .addButtonWithEditetext("Submit", null, null, new NamanCustomDialogWithDataCallback() {
+                        .addButtonWithEditetext("SUBMIT", null, null, new NamanCustomDialogWithDataCallback() {
                             @Override
                             public void onClickWithData(String firstEditTextValue, String secondEditTextValue, String thirdEditTextValue) {
                                 Toast.makeText(MainActivity.this, firstEditTextValue, Toast.LENGTH_SHORT).show();
@@ -171,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 Toast.makeText(MainActivity.this, "Submit", Toast.LENGTH_SHORT).show();
                             }
                         })
-                        .addButton("Cancel", null, null, new NamanCustomDialogCallback() {
+                        .addButton("SUBMIT", null, null, new NamanCustomDialogCallback() {
                             @Override
                             public void onClick() {
                                 Toast.makeText(MainActivity.this, "Submit", Toast.LENGTH_SHORT).show();

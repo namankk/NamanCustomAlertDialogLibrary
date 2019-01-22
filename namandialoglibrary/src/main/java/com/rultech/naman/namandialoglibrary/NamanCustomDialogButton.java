@@ -131,7 +131,8 @@ public class NamanCustomDialogButton extends LinearLayout {
         /*tv = (TextView) findViewById(R.id.tv_button);*/
         ll_button = (Button) findViewById(R.id.ll_button);
 //        ll_button.setBackgroundColor(context.getColor(buttonBackGroundColor==null?default_background_color:buttonBackGroundColor));
-        /*tv.setText(text);*/
+        if (text!=null&& !text.equalsIgnoreCase(""))
+        ll_button.setText(text);
         ll_button.setTextColor(context.getColor(buttonTextColor==null?default_text_color:buttonTextColor));
         if (buttonTextSize!=null){
             ll_button.setTextSize(buttonTextSize);
