@@ -10,7 +10,7 @@ Add this to your app build.gradle:
 
 ```
 dependencies {
-implementation 'com.rultech.naman.namandialoglibrary:NamanCustomAlertDialogLibrary:0.1.2'
+implementation 'com.rultech.naman.namandialoglibrary:NamanCustomAlertDialogLibrary:0.1.4'
 
 }
 ```
@@ -345,6 +345,11 @@ NamanCustomDialog namanCustomDialog=new NamanCustomDialog(this);
 |setButtonsHeight(Interger buttonHeight)      |set the all buttons height |
 |setButtonsTextSize(Interger butonTextSize) | set the all buttons text size |
 |setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC))  | set the font style of whole dialog |
+|setButtonTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC))  | set the font style of whole dialog buttons|
+|setEditTextTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC))  | set the font style of whole dialog edittext |
+|setTitileTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC))  | set the font style of  dialog title |
+|setMessageTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC))  | set the font style of dialog message |
+
 | .setButtonsBackgroundImage(R.drawable.button_background) | make sure you use this after adding the button 
                        
 
