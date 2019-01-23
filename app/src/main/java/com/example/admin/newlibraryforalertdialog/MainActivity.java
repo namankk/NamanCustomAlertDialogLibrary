@@ -55,17 +55,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 namanCustomDialog.show();
                 break;
             }
+
             case R.id.buttonWithSingleEditText: {
                 namanCustomDialog = new NamanCustomDialog(MainActivity.this);
                 namanCustomDialog.setTitle("Forgot Password ?").setIcon(null, null, R.color.pdlg_color_green);
                 namanCustomDialog.setEditText(1, "Enter your email", null, null);
-                namanCustomDialog.addButtonWithEditetext("Submit", null, R.color.pdlg_color_green,new NamanCustomDialogWithDataCallback() {
+                namanCustomDialog.addButtonWithEditetext("Submit", null, R.color.pdlg_color_green, new NamanCustomDialogWithDataCallback() {
                     @Override
                     public void onClickWithData(String firstEditTextValue, String secondEditTextValue, String thirdEditTextValue) {
                         Toast.makeText(MainActivity.this, firstEditTextValue, Toast.LENGTH_SHORT).show();
                     }
                 });
-                namanCustomDialog.addButton("Cancel", null, R.color.pdlg_color_green,new NamanCustomDialogCallback() {
+                namanCustomDialog.addButton("Cancel", null, R.color.pdlg_color_green, new NamanCustomDialogCallback() {
                     @Override
                     public void onClick() {
                         Toast.makeText(MainActivity.this, "close the dialog", Toast.LENGTH_SHORT).show();
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 namanCustomDialog.show();
                 break;
             }
+
             case R.id.buttonWithThreeEditText: {
                 namanCustomDialog = new NamanCustomDialog(MainActivity.this);
                 namanCustomDialog.setTitle("Change Password ?").setIcon(null, R.color.pdlg_color_black, R.color.pdlg_color_gray)
@@ -85,23 +87,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .setEditTextInputType(1, InputType.TYPE_CLASS_TEXT)
                         .setEditTextInputType(2, InputType.TYPE_TEXT_VARIATION_PASSWORD)
                         .setEditTextInputType(3, InputType.TYPE_TEXT_VARIATION_PASSWORD)
-                .addButtonWithEditetext("Submit", R.color.pdlg_color_black, R.color.pdlg_color_gray,new NamanCustomDialogWithDataCallback() {
-                    @Override
-                    public void onClickWithData(String firstEditTextValue, String secondEditTextValue, String thirdEditTextValue) {
-                        Toast.makeText(MainActivity.this, firstEditTextValue + " " + secondEditTextValue + " " + thirdEditTextValue, Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .addButton("Cancel", R.color.pdlg_color_black, R.color.pdlg_color_gray, new NamanCustomDialogCallback() {
-                    @Override
-                    public void onClick() {
-                        Toast.makeText(MainActivity.this, "close the dialog", Toast.LENGTH_SHORT).show();
-                        namanCustomDialog.hide();
-                    }
-                })
-                .setAnimationEnabled(true)
-                .show();
+                        .addButtonWithEditetext("Submit", R.color.pdlg_color_black, R.color.pdlg_color_gray, new NamanCustomDialogWithDataCallback() {
+                            @Override
+                            public void onClickWithData(String firstEditTextValue, String secondEditTextValue, String thirdEditTextValue) {
+                                Toast.makeText(MainActivity.this, firstEditTextValue + " " + secondEditTextValue + " " + thirdEditTextValue, Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addButton("Cancel", R.color.pdlg_color_black, R.color.pdlg_color_gray, new NamanCustomDialogCallback() {
+                            @Override
+                            public void onClick() {
+                                Toast.makeText(MainActivity.this, "close the dialog", Toast.LENGTH_SHORT).show();
+                                namanCustomDialog.hide();
+                            }
+                        })
+                        .setAnimationEnabled(true)
+                        .setButtonTypeface(Typeface.DEFAULT_BOLD)
+                        .show();
                 break;
             }
+
             case R.id.buttonCustomSetting: {
                 namanCustomDialog = new NamanCustomDialog(MainActivity.this);
                 namanCustomDialog.setIcon(R.drawable.ic_setting, R.color.pdlg_color_yellow, R.color.pdlg_color_red)
@@ -134,9 +138,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 namanCustomDialog.show();
                 break;
             }
-            case R.id.buttonSizeChange:{
-                namanCustomDialog=new NamanCustomDialog(this);
-                namanCustomDialog.setIcon(null,null,null)
+
+            case R.id.buttonSizeChange: {
+                namanCustomDialog = new NamanCustomDialog(this);
+                namanCustomDialog.setIcon(null, null, null)
                         .setTitle("Button size change")
                         .setMessage("change button height and button text size")
                         .addButton("Submit", null, null, new NamanCustomDialogCallback() {
@@ -155,6 +160,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .show();
                 break;
             }
+
             case R.id.buttonTextStyleChange: {
                 namanCustomDialog = new NamanCustomDialog(this);
                 namanCustomDialog.setIcon(null, null, null)
@@ -182,6 +188,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC))
                         .setButtonsBackgroundImage(R.drawable.button_background)
                         .setButtonsHeight(40)
+                        .setButtonTypeface(Typeface.MONOSPACE)
                         .show();
                 break;
             }

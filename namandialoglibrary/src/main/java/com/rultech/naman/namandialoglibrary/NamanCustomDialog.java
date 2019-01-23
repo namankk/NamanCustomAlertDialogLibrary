@@ -68,6 +68,7 @@ public class NamanCustomDialog extends AppCompatDialog {
         tv_title.setVisibility(View.GONE);
         tv_message = (TextView) findViewById(R.id.tv_message);
         tv_message.setVisibility(View.GONE);
+
         et_first = (EditText) findViewById(R.id.et_first);
         et_second = (EditText) findViewById(R.id.et_second);
         et_third = (EditText) findViewById(R.id.et_third);
@@ -78,6 +79,7 @@ public class NamanCustomDialog extends AppCompatDialog {
 
         imgIcon = (ImageView) findViewById(R.id.imgIcon);
         Drawable drawable = context.getDrawable(R.drawable.dialogbox_oval_shape);
+        assert drawable != null;
         drawable.setTint(context.getColor(R.color.colorPrimaryDark));
         imgIcon.setBackground(drawable);
 
@@ -107,7 +109,7 @@ public class NamanCustomDialog extends AppCompatDialog {
 
     /************************************* Add Button to Dialog ***********************************/
     public NamanCustomDialog addButton(String buttonText, Integer buttonTextColor, Integer buttonBackGroundColor, NamanCustomDialogCallback callback) {
-        NamanCustomDialogButton button = new NamanCustomDialogButton(context, buttonText, buttonTextColor, buttonBackGroundColor, typeface,callback);
+        NamanCustomDialogButton button = new NamanCustomDialogButton(context, buttonText, buttonTextColor, buttonBackGroundColor, typeface, callback);
         int margin = resources.getDimensionPixelSize(R.dimen.pdlg_space_1_0x);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp.setMargins(margin, margin, margin, 0);
@@ -116,7 +118,7 @@ public class NamanCustomDialog extends AppCompatDialog {
         return this;
     }
 
-    public NamanCustomDialog addButtonWithEditetext(String buttonText, Integer buttonTextColor, Integer buttonBackGroundColor,  final NamanCustomDialogWithDataCallback customDialogWithDataCallback) {
+    public NamanCustomDialog addButtonWithEditetext(String buttonText, Integer buttonTextColor, Integer buttonBackGroundColor, final NamanCustomDialogWithDataCallback customDialogWithDataCallback) {
         NamanCustomDialogButton button = new NamanCustomDialogButton(context, buttonText, buttonTextColor, buttonBackGroundColor, typeface, new NamanCustomDialogWithDataCallback() {
             @Override
             public void onClickWithData(String firstEditTextValue, String secondEditTextValue, String thirdEditTextValue) {
@@ -197,18 +199,52 @@ public class NamanCustomDialog extends AppCompatDialog {
 
         return this;
     }
+
+    public NamanCustomDialog setTitleTypeface(Typeface tf) {
+        typeface = tf;
+        tv_title.setTypeface(tf);
+        return this;
+    }
+
+    public NamanCustomDialog setMessageTypeface(Typeface tf) {
+        typeface = tf;
+        tv_message.setTypeface(tf);
+        return this;
+    }
+
+    public NamanCustomDialog setEditTextTypeface(Typeface tf) {
+        typeface = tf;
+        et_first.setTypeface(tf);
+        et_second.setTypeface(tf);
+        et_third.setTypeface(tf);
+
+        return this;
+    }
+
+    public NamanCustomDialog setButtonTypeface(Typeface tf) {
+
+        for (int i = 0; i < ll_buttons.getChildCount(); i++) {
+            NamanCustomDialogButton button = (NamanCustomDialogButton) ll_buttons.getChildAt(i);
+            button.setTypeface(tf);
+            button.requestLayout();
+        }
+
+        return this;
+    }
+
     public NamanCustomDialog setButtonsHeight(Integer buttonHeight) {
 
         for (int i = 0; i < ll_buttons.getChildCount(); i++) {
             NamanCustomDialogButton button = (NamanCustomDialogButton) ll_buttons.getChildAt(i);
             final float scale = getContext().getResources().getDisplayMetrics().density;
             int pixels = (int) (buttonHeight * scale + 0.5f);
-           button.setButtonHeight(pixels);
+            button.setButtonHeight(pixels);
             button.requestLayout();
         }
 
         return this;
     }
+
     public NamanCustomDialog setButtonsTextSize(Integer buttonsTextSize) {
 
         for (int i = 0; i < ll_buttons.getChildCount(); i++) {
@@ -219,6 +255,7 @@ public class NamanCustomDialog extends AppCompatDialog {
 
         return this;
     }
+
     public NamanCustomDialog setButtonsBackgroundImage(int drawableID) {
 
         for (int i = 0; i < ll_buttons.getChildCount(); i++) {
@@ -301,6 +338,7 @@ public class NamanCustomDialog extends AppCompatDialog {
                 } else {
                     et_first.setInputType(inputType);
                 }
+                et_first.setTypeface(Typeface.DEFAULT);
                 break;
             }
             case 2: {
@@ -309,7 +347,7 @@ public class NamanCustomDialog extends AppCompatDialog {
                 } else {
                     et_second.setInputType(inputType);
                 }
-
+                et_second.setTypeface(Typeface.DEFAULT);
                 break;
             }
             case 3: {
@@ -318,7 +356,7 @@ public class NamanCustomDialog extends AppCompatDialog {
                 } else {
                     et_third.setInputType(inputType);
                 }
-
+et_third.setTypeface(Typeface.DEFAULT);
                 break;
             }
             case 4: {
@@ -331,13 +369,19 @@ public class NamanCustomDialog extends AppCompatDialog {
                     et_second.setInputType(inputType);
                     et_third.setInputType(inputType);
                 }
-
+                et_first.setTypeface(Typeface.DEFAULT);
+                et_second.setTypeface(Typeface.DEFAULT);
+                et_third.setTypeface(Typeface.DEFAULT);
                 break;
             }
             default: {
                 et_first.setInputType(InputType.TYPE_CLASS_TEXT);
                 et_second.setInputType(InputType.TYPE_CLASS_TEXT);
                 et_third.setInputType(InputType.TYPE_CLASS_TEXT);
+
+                et_first.setTypeface(Typeface.DEFAULT);
+                et_second.setTypeface(Typeface.DEFAULT);
+                et_third.setTypeface(Typeface.DEFAULT);
                 break;
             }
         }

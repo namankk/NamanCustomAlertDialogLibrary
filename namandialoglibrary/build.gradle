@@ -8,7 +8,7 @@ publish {
 
     def groupProjectID = 'com.rultech.naman.namandialoglibrary'
     def artifactProjectID = 'NamanCustomAlertDialogLibrary'
-    def publishVersionID = '0.1.2'
+    def publishVersionID = '0.1.3'
 
     userOrg = 'namankashyap'
     repoName = 'NamanCustomAlertDialogLibrary'
