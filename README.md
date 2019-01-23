@@ -349,8 +349,7 @@ NamanCustomDialog namanCustomDialog=new NamanCustomDialog(this);
 |setEditTextTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC))  | set the font style of whole dialog edittext |
 |setTitileTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC))  | set the font style of  dialog title |
 |setMessageTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC))  | set the font style of dialog message |
-
-| .setButtonsBackgroundImage(R.drawable.button_background) | make sure you use this after adding the button 
+|setButtonsBackgroundImage(R.drawable.button_background) | make sure you use this after adding the button 
                        
 
 
